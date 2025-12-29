@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intelligence.Agent</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container-xxl py-6 pb-5" id="tutorial">
+        <div class="container">
+            <div class="row g-5 mb-5 fadeInUp" data-delay="0.1s">
+                <div class="col-lg-12 text-center">
+                    <h1 class="display-5 mb-3">Intelligence.Agent</h1>
+                    <p class="lead subtitle"><b>Personalized Tutorial to master the concept of computational intelligence, fields like AI, Machine Learning, and Data Science Concepts</b></p>
+                    
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6 fadeInUp" data-delay="0.1s">
+                    <a href="https://prateekdutta2001.github.io/Agentic.AI/" target="_blank"
+                        class="service-item d-block rounded text-center h-100 p-4" data-topic="agentic-ai">
+                        <div class="bg-icon mx-auto mb-4">
+                            <i class="fas fa-robot fa-2x text-primary"></i>
+                        </div>
+                        <h4 class="mb-3">Agentic AI</h4>
+                        <p class="description">Explore autonomous AI systems and intelligent agents</p>
+                        <div class="hover-overlay">
+                            <span class="hover-text">Start Learning →</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-6 fadeInUp" data-delay="0.3s">
+                    <a href="https://prateekdutta2001.github.io/Info_Stats/" target="_blank"
+                        class="service-item d-block rounded text-center h-100 p-4" data-topic="inferential-stats">
+                        <div class="bg-icon mx-auto mb-4">
+                            <i class="fas fa-chart-bar fa-2x text-primary"></i>
+                        </div>
+                        <h4 class="mb-3">Inferential Statistics</h4>
+                        <p class="description">Learn statistical inference and hypothesis testing</p>
+                        <div class="hover-overlay">
+                            <span class="hover-text">Start Learning →</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-6 fadeInUp" data-delay="0.5s">
+                    <a href="https://prateekdutta2001.github.io/NeuraNet/" target="_blank"
+                        class="service-item d-block rounded text-center h-100 p-4" data-topic="neural-networks">
+                        <div class="bg-icon mx-auto mb-4">
+                            <i class="fas fa-project-diagram fa-2x text-primary"></i>
+                        </div>
+                        <h4 class="mb-3">Neural Networks</h4>
+                        <p class="description">Deep dive into artificial neural networks and deep learning</p>
+                        <div class="hover-overlay">
+                            <span class="hover-text">Start Learning →</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-6 fadeInUp" data-delay="0.1s">
+                    <a href="https://prateekdutta2001.github.io/XAI/" target="_blank"
+                        class="service-item d-block rounded text-center h-100 p-4" data-topic="explainable-ai">
+                        <div class="bg-icon mx-auto mb-4">
+                            <i class="fas fa-lightbulb fa-2x text-primary"></i>
+                        </div>
+                        <h4 class="mb-3">Explainable AI</h4>
+                        <p class="description">Understand how AI makes decisions and interpretability</p>
+                        <div class="hover-overlay">
+                            <span class="hover-text">Start Learning →</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-6 fadeInUp" data-delay="0.3s">
+                    <a href="https://prateekdutta2001.github.io/Craft-N-Vibe/" target="_blank"
+                        class="service-item d-block rounded text-center h-100 p-4" data-topic="prompt-engineering">
+                        <div class="bg-icon mx-auto mb-4">
+                            <i class="fas fa-terminal fa-2x text-primary"></i>
+                        </div>
+                        <h4 class="mb-3">Prompt Engineering</h4>
+                        <p class="description">Master the art of crafting effective prompts for AI</p>
+                        <div class="hover-overlay">
+                            <span class="hover-text">Start Learning →</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-6 fadeInUp" data-delay="0.5s">
+                    <a href="https://prateekdutta2001.github.io/RAG-Tutorial/" target="_blank"
+                        class="service-item d-block rounded text-center h-100 p-4" data-topic="rag-workflows">
+                        <div class="bg-icon mx-auto mb-4">
+                            <i class="fas fa-book fa-2x text-primary"></i>
+                        </div>
+                        <h4 class="mb-3">RAG & Knowledge Workflows</h4>
+                        <p class="description">Build retrieval-augmented generation systems</p>
+                        <div class="hover-overlay">
+                            <span class="hover-text">Start Learning →</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Examples Section -->
+    <div class="container-xxl py-6 pb-5" id="examples">
+        <div class="container">
+            <div class="row g-5 mb-5 fadeInUp" data-delay="0.1s">
+                <div class="col-lg-12 text-center">
+                    <h1 class="display-5 mb-3">Real-World Examples & Use Cases</h1>
+                    <p class="lead subtitle">Explore practical applications and case studies from each domain</p>
+                </div>
+            </div>
+            
+            <!-- Agentic AI Examples -->
+            <div class="example-category mb-5 fadeInUp" data-delay="0.1s">
+                <div class="category-header">
+                    <i class="fas fa-robot"></i>
+                    <h2>Agentic AI</h2>
+                </div>
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="example-card" data-modal="agentic-ai-1">
+                            <div class="example-icon">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                            <h4>E-Commerce Personal Shopping Assistant</h4>
+                            <p>An AI agent that autonomously browses products, compares prices, tracks deals, and makes purchase recommendations based on user preferences and budget constraints.</p>
+                            <div class="example-tags">
+                                <span class="tag">Autonomous Decision Making</span>
+                                <span class="tag">Multi-Agent Systems</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="example-card" data-modal="agentic-ai-2">
+                            <div class="example-icon">
+                                <i class="fas fa-route"></i>
+                            </div>
+                            <h4>Autonomous Delivery Drones</h4>
+                            <p>Self-navigating drones that plan routes, avoid obstacles, adapt to weather conditions, and coordinate with other drones to optimize delivery schedules in real-time.</p>
+                            <div class="example-tags">
+                                <span class="tag">Reactive Planning</span>
+                                <span class="tag">Environment Adaptation</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="example-card" data-modal="agentic-ai-3">
+                            <div class="example-icon">
+                                <i class="fas fa-user-md"></i>
+                            </div>
+                            <h4>Healthcare Diagnostic Agent</h4>
+                            <p>An AI agent that autonomously analyzes patient symptoms, reviews medical history, suggests diagnostic tests, and provides treatment recommendations while learning from outcomes.</p>
+                            <div class="example-tags">
+                                <span class="tag">Learning Agents</span>
+                                <span class="tag">Decision Support</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Inferential Statistics Examples -->
+            <div class="example-category mb-5 fadeInUp" data-delay="0.2s">
+                <div class="category-header">
+                    <i class="fas fa-chart-bar"></i>
+                    <h2>Inferential Statistics</h2>
+                </div>
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="example-card" data-modal="stats-1">
+                            <div class="example-icon">
+                                <i class="fas fa-pills"></i>
+                            </div>
+                            <h4>Clinical Drug Trial Analysis</h4>
+                            <p>Using hypothesis testing to determine if a new medication significantly improves patient outcomes compared to placebo, with confidence intervals and p-value analysis.</p>
+                            <div class="example-tags">
+                                <span class="tag">Hypothesis Testing</span>
+                                <span class="tag">Confidence Intervals</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="example-card" data-modal="stats-2">
+                            <div class="example-icon">
+                                <i class="fas fa-poll"></i>
+                            </div>
+                            <h4>Election Polling & Predictions</h4>
+                            <p>Sampling voter preferences from a subset of population to infer overall election results, calculating margin of error and statistical significance of polling data.</p>
+                            <div class="example-tags">
+                                <span class="tag">Sampling Theory</span>
+                                <span class="tag">Population Inference</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="example-card" data-modal="stats-3">
+                            <div class="example-icon">
+                                <i class="fas fa-industry"></i>
+                            </div>
+                            <h4>Quality Control in Manufacturing</h4>
+                            <p>Statistical process control using sample testing to infer product quality across entire production batches, detecting defects and ensuring quality standards.</p>
+                            <div class="example-tags">
+                                <span class="tag">Statistical Process Control</span>
+                                <span class="tag">Quality Assurance</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Neural Networks Examples -->
+            <div class="example-category mb-5 fadeInUp" data-delay="0.3s">
+                <div class="category-header">
+                    <i class="fas fa-project-diagram"></i>
+                    <h2>Neural Networks</h2>
+                </div>
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="example-card" data-modal="nn-1">
+                            <div class="example-icon">
+                                <i class="fas fa-image"></i>
+                            </div>
+                            <h4>Medical Image Diagnosis</h4>
+                            <p>CNN-based systems that analyze X-rays, MRIs, and CT scans to detect tumors, fractures, and diseases with accuracy matching or exceeding radiologists.</p>
+                            <div class="example-tags">
+                                <span class="tag">Convolutional Neural Networks</span>
+                                <span class="tag">Computer Vision</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="example-card" data-modal="nn-2">
+                            <div class="example-icon">
+                                <i class="fas fa-language"></i>
+                            </div>
+                            <h4>Real-Time Language Translation</h4>
+                            <p>Sequence-to-sequence neural networks that translate between languages in real-time, powering services like Google Translate and multilingual chatbots.</p>
+                            <div class="example-tags">
+                                <span class="tag">RNN/LSTM</span>
+                                <span class="tag">NLP</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="example-card" data-modal="nn-3">
+                            <div class="example-icon">
+                                <i class="fas fa-car"></i>
+                            </div>
+                            <h4>Autonomous Vehicle Navigation</h4>
+                            <p>Deep neural networks processing sensor data (cameras, LiDAR) to recognize objects, predict movements, and make driving decisions in self-driving cars.</p>
+                            <div class="example-tags">
+                                <span class="tag">Deep Learning</span>
+                                <span class="tag">Reinforcement Learning</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Explainable AI Examples -->
+            <div class="example-category mb-5 fadeInUp" data-delay="0.4s">
+                <div class="category-header">
+                    <i class="fas fa-lightbulb"></i>
+                    <h2>Explainable AI</h2>
+                </div>
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="example-card" data-modal="xai-1">
+                            <div class="example-icon">
+                                <i class="fas fa-credit-card"></i>
+                            </div>
+                            <h4>Loan Approval Transparency</h4>
+                            <p>Banks using XAI to explain why loan applications are approved or rejected, showing which factors (income, credit score, debt ratio) influenced the decision.</p>
+                            <div class="example-tags">
+                                <span class="tag">SHAP Values</span>
+                                <span class="tag">Feature Importance</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="example-card" data-modal="xai-2">
+                            <div class="example-icon">
+                                <i class="fas fa-gavel"></i>
+                            </div>
+                            <h4>Legal Case Prediction & Reasoning</h4>
+                            <p>AI systems that predict case outcomes while providing interpretable explanations of legal precedents and reasoning paths used in the decision.</p>
+                            <div class="example-tags">
+                                <span class="tag">Interpretable Models</span>
+                                <span class="tag">Decision Trees</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="example-card" data-modal="xai-3">
+                            <div class="example-icon">
+                                <i class="fas fa-heartbeat"></i>
+                            </div>
+                            <h4>Medical Diagnosis Explanation</h4>
+                            <p>Healthcare AI that not only diagnoses conditions but also highlights which symptoms, test results, and patient history factors led to the diagnosis.</p>
+                            <div class="example-tags">
+                                <span class="tag">LIME</span>
+                                <span class="tag">Attention Mechanisms</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Prompt Engineering Examples -->
+            <div class="example-category mb-5 fadeInUp" data-delay="0.5s">
+                <div class="category-header">
+                    <i class="fas fa-terminal"></i>
+                    <h2>Prompt Engineering</h2>
+                </div>
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="example-card" data-modal="prompt-1">
+                            <div class="example-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <h4>Code Generation & Debugging</h4>
+                            <p>Engineers using structured prompts to generate production-ready code, refactor legacy systems, and debug complex issues with context-aware AI assistants.</p>
+                            <div class="example-tags">
+                                <span class="tag">Chain-of-Thought</span>
+                                <span class="tag">Few-Shot Learning</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="example-card" data-modal="prompt-2">
+                            <div class="example-icon">
+                                <i class="fas fa-file-alt"></i>
+                            </div>
+                            <h4>Content Creation & Marketing</h4>
+                            <p>Marketing teams crafting prompts to generate blog posts, social media content, and ad copy tailored to specific audiences, tones, and brand guidelines.</p>
+                            <div class="example-tags">
+                                <span class="tag">Role-Based Prompting</span>
+                                <span class="tag">Style Transfer</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="example-card" data-modal="prompt-3">
+                            <div class="example-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <h4>Personalized Learning Tutors</h4>
+                            <p>Educational platforms using carefully engineered prompts to create adaptive learning experiences, explanations, and practice problems based on student level.</p>
+                            <div class="example-tags">
+                                <span class="tag">Context Engineering</span>
+                                <span class="tag">Iterative Refinement</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RAG & Knowledge Workflows Examples -->
+            <div class="example-category mb-5 fadeInUp" data-delay="0.6s">
+                <div class="category-header">
+                    <i class="fas fa-book"></i>
+                    <h2>RAG & Knowledge Workflows</h2>
+                </div>
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="example-card" data-modal="rag-1">
+                            <div class="example-icon">
+                                <i class="fas fa-headset"></i>
+                            </div>
+                            <h4>Enterprise Customer Support</h4>
+                            <p>RAG systems that retrieve relevant product documentation, FAQs, and support tickets to provide accurate, context-aware answers to customer inquiries in real-time.</p>
+                            <div class="example-tags">
+                                <span class="tag">Vector Databases</span>
+                                <span class="tag">Semantic Search</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="example-card" data-modal="rag-2">
+                            <div class="example-icon">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                            <h4>Legal Research Assistant</h4>
+                            <p>AI systems that search through case law, statutes, and legal precedents to help lawyers find relevant information and generate legal briefs with citations.</p>
+                            <div class="example-tags">
+                                <span class="tag">Document Retrieval</span>
+                                <span class="tag">Citation Generation</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="example-card" data-modal="rag-3">
+                            <div class="example-icon">
+                                <i class="fas fa-flask"></i>
+                            </div>
+                            <h4>Scientific Literature Analysis</h4>
+                            <p>Researchers using RAG to query vast scientific databases, retrieve relevant papers, synthesize findings, and generate literature reviews with proper citations.</p>
+                            <div class="example-tags">
+                                <span class="tag">Knowledge Graphs</span>
+                                <span class="tag">Multi-Document Synthesis</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Structure -->
+    <div id="exampleModal" class="modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close modal">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-body" id="modalBody">
+                <!-- Content will be dynamically inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container-xxl">
+            <div class="footer-content">
+                <div class="footer-disclaimer">
+                    <p><strong>Disclaimer:</strong> All contents on this page are self-generated and designed for educational purposes.</p>
+                </div>
+                <div class="footer-credits">
+                    <p>Designed & Developed By: <strong>Prateek Dutta</strong></p>
+                    <p>Copyright © 2025. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal Content Data (hidden) -->
+    <script type="application/json" id="modalData">
+    {
+        "agentic-ai-1": {
+            "title": "E-Commerce Personal Shopping Assistant",
+            "category": "Agentic AI",
+            "icon": "fas fa-shopping-cart",
+            "description": "An AI agent that autonomously browses products, compares prices, tracks deals, and makes purchase recommendations based on user preferences and budget constraints.",
+            "details": "This intelligent shopping assistant operates as an autonomous agent that continuously monitors e-commerce platforms, price comparison sites, and deal aggregators. It learns from user behavior, purchase history, and preferences to make intelligent purchasing decisions.",
+            "howItWorks": [
+                "The agent uses web scraping and API integrations to monitor product prices across multiple platforms",
+                "It employs machine learning algorithms to understand user preferences and shopping patterns",
+                "The system autonomously decides when to purchase based on price drops, availability, and user-defined criteria",
+                "It can negotiate with sellers, apply discount codes, and optimize delivery options",
+                "The agent learns from each transaction to improve future recommendations"
+            ],
+            "realWorldExample": "Amazon's Alexa Shopping and Google Shopping use similar agentic AI systems. These assistants can autonomously reorder products, find the best deals, and even make purchases on behalf of users when given permission.",
+            "technologies": ["Autonomous Decision Making", "Multi-Agent Systems", "Reinforcement Learning", "Natural Language Processing", "Price Optimization Algorithms"],
+            "benefits": [
+                "Saves time by automating product research and price comparison",
+                "Finds the best deals automatically",
+                "Learns user preferences over time",
+                "Can make purchases when authorized",
+                "Provides personalized shopping recommendations"
+            ]
+        },
+        "agentic-ai-2": {
+            "title": "Autonomous Delivery Drones",
+            "category": "Agentic AI",
+            "icon": "fas fa-route",
+            "description": "Self-navigating drones that plan routes, avoid obstacles, adapt to weather conditions, and coordinate with other drones to optimize delivery schedules in real-time.",
+            "details": "These delivery drones operate as autonomous agents that make real-time decisions about navigation, obstacle avoidance, and route optimization. They can adapt to changing conditions and coordinate with other drones in a fleet.",
+            "howItWorks": [
+                "Drones use computer vision and LiDAR sensors to detect and avoid obstacles",
+                "They employ GPS and inertial navigation systems for precise positioning",
+                "Weather monitoring systems help drones adapt flight paths to avoid storms",
+                "Multi-agent coordination algorithms optimize delivery routes across the fleet",
+                "Real-time decision-making allows drones to handle unexpected situations autonomously"
+            ],
+            "realWorldExample": "Companies like Amazon Prime Air, Wing (Alphabet), and Zipline use autonomous delivery drones. Zipline's drones have delivered over 1 million medical supplies in Rwanda, making autonomous decisions about flight paths and delivery locations.",
+            "technologies": ["Reactive Planning", "Environment Adaptation", "Computer Vision", "Path Planning Algorithms", "Multi-Agent Coordination", "Sensor Fusion"],
+            "benefits": [
+                "Faster delivery times, especially in remote areas",
+                "Reduced delivery costs",
+                "Ability to reach difficult-to-access locations",
+                "24/7 autonomous operation",
+                "Reduced carbon footprint compared to traditional delivery vehicles"
+            ]
+        },
+        "agentic-ai-3": {
+            "title": "Healthcare Diagnostic Agent",
+            "category": "Agentic AI",
+            "icon": "fas fa-user-md",
+            "description": "An AI agent that autonomously analyzes patient symptoms, reviews medical history, suggests diagnostic tests, and provides treatment recommendations while learning from outcomes.",
+            "details": "This healthcare agent acts as an autonomous diagnostic assistant that can analyze complex medical data, suggest tests, and learn from treatment outcomes to improve future recommendations.",
+            "howItWorks": [
+                "The agent analyzes patient symptoms, medical history, and lab results",
+                "It autonomously searches medical databases and research papers for similar cases",
+                "The system suggests diagnostic tests based on probability and cost-effectiveness",
+                "It provides treatment recommendations with confidence scores",
+                "The agent learns from treatment outcomes to improve future diagnoses"
+            ],
+            "realWorldExample": "IBM Watson for Oncology and Google's DeepMind Health use agentic AI principles. These systems can analyze medical images, suggest diagnoses, and learn from outcomes. Babylon Health's AI assistant provides preliminary diagnoses and triage recommendations.",
+            "technologies": ["Learning Agents", "Decision Support Systems", "Medical Knowledge Graphs", "Probabilistic Reasoning", "Clinical Decision Trees"],
+            "benefits": [
+                "Faster diagnosis and treatment recommendations",
+                "Access to vast medical knowledge databases",
+                "Consistent analysis without human fatigue",
+                "Learning from outcomes improves accuracy over time",
+                "Can assist in rare disease diagnosis"
+            ]
+        },
+        "stats-1": {
+            "title": "Clinical Drug Trial Analysis",
+            "category": "Inferential Statistics",
+            "icon": "fas fa-pills",
+            "description": "Using hypothesis testing to determine if a new medication significantly improves patient outcomes compared to placebo, with confidence intervals and p-value analysis.",
+            "details": "Clinical trials use inferential statistics to determine whether observed differences between treatment groups are statistically significant or due to random chance. This involves careful experimental design and rigorous statistical analysis.",
+            "howItWorks": [
+                "Researchers randomly assign patients to treatment and control groups",
+                "Data is collected on patient outcomes (e.g., recovery rates, symptom improvement)",
+                "Hypothesis testing is performed: H0 (no difference) vs H1 (treatment is effective)",
+                "Confidence intervals are calculated to estimate the true effect size",
+                "P-values determine if results are statistically significant (typically p < 0.05)"
+            ],
+            "realWorldExample": "The Pfizer-BioNTech COVID-19 vaccine trial used inferential statistics. With 43,000 participants, the trial showed 95% efficacy with a p-value < 0.0001, meaning there's less than 0.01% chance the results were due to random chance.",
+            "technologies": ["Hypothesis Testing", "Confidence Intervals", "P-value Analysis", "Randomized Controlled Trials", "Statistical Power Analysis"],
+            "benefits": [
+                "Provides scientific evidence for drug effectiveness",
+                "Helps determine if treatments are statistically significant",
+                "Quantifies uncertainty through confidence intervals",
+                "Enables evidence-based medical decisions",
+                "Regulatory approval requires statistical significance"
+            ]
+        },
+        "stats-2": {
+            "title": "Election Polling & Predictions",
+            "category": "Inferential Statistics",
+            "icon": "fas fa-poll",
+            "description": "Sampling voter preferences from a subset of population to infer overall election results, calculating margin of error and statistical significance of polling data.",
+            "details": "Election polling uses statistical sampling to infer the preferences of an entire population from a smaller sample. This requires careful sampling methods and understanding of statistical inference.",
+            "howItWorks": [
+                "Pollsters randomly sample a subset of the voting population (typically 1,000-2,000 people)",
+                "They collect voting preferences and demographic data",
+                "Statistical methods account for sampling bias and demographic weighting",
+                "Margin of error is calculated (typically ±3-4% for 95% confidence)",
+                "Results are used to infer overall population preferences"
+            ],
+            "realWorldExample": "During the 2020 US Presidential Election, polling organizations like FiveThirtyEight used inferential statistics. They sampled ~1,000-2,000 voters per state and predicted outcomes with margins of error. While not perfect, statistical models correctly predicted the winner in most states.",
+            "technologies": ["Sampling Theory", "Population Inference", "Confidence Intervals", "Stratified Sampling", "Weighting Methods"],
+            "benefits": [
+                "Cost-effective way to understand large populations",
+                "Provides predictions before full results are available",
+                "Quantifies uncertainty through margin of error",
+                "Helps campaigns understand voter preferences",
+                "Enables early trend detection"
+            ]
+        },
+        "stats-3": {
+            "title": "Quality Control in Manufacturing",
+            "category": "Inferential Statistics",
+            "icon": "fas fa-industry",
+            "description": "Statistical process control using sample testing to infer product quality across entire production batches, detecting defects and ensuring quality standards.",
+            "details": "Manufacturing uses statistical process control (SPC) to monitor production quality by testing samples rather than every product. This allows inference about overall batch quality while being cost-effective.",
+            "howItWorks": [
+                "Quality control teams randomly sample products from production batches",
+                "Samples are tested for defects, dimensions, or other quality metrics",
+                "Statistical control charts track process variation over time",
+                "Hypothesis testing determines if the process is in control",
+                "If samples indicate problems, the entire batch may be inspected or rejected"
+            ],
+            "realWorldExample": "Toyota's production system uses statistical process control extensively. They sample parts from production lines and use control charts to detect when processes drift out of specification. This allows early detection of quality issues before entire batches are affected.",
+            "technologies": ["Statistical Process Control", "Quality Assurance", "Control Charts", "Sampling Methods", "Hypothesis Testing"],
+            "benefits": [
+                "Cost-effective quality monitoring",
+                "Early detection of production problems",
+                "Reduces need to test every product",
+                "Maintains consistent quality standards",
+                "Enables data-driven process improvements"
+            ]
+        },
+        "nn-1": {
+            "title": "Medical Image Diagnosis",
+            "category": "Neural Networks",
+            "icon": "fas fa-image",
+            "description": "CNN-based systems that analyze X-rays, MRIs, and CT scans to detect tumors, fractures, and diseases with accuracy matching or exceeding radiologists.",
+            "details": "Convolutional Neural Networks (CNNs) are particularly well-suited for medical image analysis. They can detect patterns and anomalies that might be missed by human eyes, and they learn from thousands of labeled medical images.",
+            "howItWorks": [
+                "CNNs are trained on large datasets of labeled medical images (e.g., X-rays with/without pneumonia)",
+                "The network learns hierarchical features: edges → shapes → anatomical structures → pathologies",
+                "During inference, new images are fed through the trained network",
+                "The network outputs probability scores for different conditions",
+                "Results are often combined with radiologist review for final diagnosis"
+            ],
+            "realWorldExample": "Google's DeepMind developed an AI system that can detect over 50 eye diseases from retinal scans with 94% accuracy, matching expert ophthalmologists. Stanford's CheXNet can detect pneumonia from chest X-rays with accuracy exceeding radiologists. These systems are now used in hospitals worldwide.",
+            "technologies": ["Convolutional Neural Networks", "Computer Vision", "Transfer Learning", "Image Classification", "Medical Imaging"],
+            "benefits": [
+                "High accuracy, often matching or exceeding human experts",
+                "Can process images faster than humans",
+                "Reduces radiologist workload",
+                "Consistent analysis without fatigue",
+                "Can detect subtle patterns humans might miss"
+            ]
+        },
+        "nn-2": {
+            "title": "Real-Time Language Translation",
+            "category": "Neural Networks",
+            "icon": "fas fa-language",
+            "description": "Sequence-to-sequence neural networks that translate between languages in real-time, powering services like Google Translate and multilingual chatbots.",
+            "details": "Modern translation systems use sequence-to-sequence neural networks, particularly Transformer architectures, to translate text between languages while preserving meaning and context.",
+            "howItWorks": [
+                "Neural networks are trained on parallel text corpora (same text in multiple languages)",
+                "Encoder networks process source language and create semantic representations",
+                "Decoder networks generate target language text from these representations",
+                "Attention mechanisms help the network focus on relevant parts of the input",
+                "The system learns language patterns, grammar, and context from training data"
+            ],
+            "realWorldExample": "Google Translate processes over 100 billion words daily using neural machine translation. It supports 133 languages and uses Transformer models. Microsoft Translator and DeepL also use similar neural network architectures. These systems power real-time translation in video calls, documents, and mobile apps.",
+            "technologies": ["RNN/LSTM", "NLP", "Transformer Architecture", "Sequence-to-Sequence Models", "Attention Mechanisms"],
+            "benefits": [
+                "Real-time translation capabilities",
+                "Context-aware translations",
+                "Supports many language pairs",
+                "Continuously improving with more data",
+                "Enables global communication"
+            ]
+        },
+        "nn-3": {
+            "title": "Autonomous Vehicle Navigation",
+            "category": "Neural Networks",
+            "icon": "fas fa-car",
+            "description": "Deep neural networks processing sensor data (cameras, LiDAR) to recognize objects, predict movements, and make driving decisions in self-driving cars.",
+            "details": "Autonomous vehicles use deep neural networks to process vast amounts of sensor data in real-time, enabling them to understand their environment, predict other vehicles' behavior, and make safe driving decisions.",
+            "howItWorks": [
+                "Multiple sensors (cameras, LiDAR, radar) collect environmental data",
+                "CNNs process camera images to detect objects (cars, pedestrians, signs)",
+                "Recurrent networks predict the future positions of moving objects",
+                "Deep reinforcement learning helps the system learn optimal driving policies",
+                "Decision networks combine all information to control steering, acceleration, and braking"
+            ],
+            "realWorldExample": "Tesla's Autopilot and Full Self-Driving use neural networks trained on millions of miles of driving data. Waymo's autonomous vehicles have driven over 20 million miles using deep learning. These systems can recognize complex scenarios like construction zones, emergency vehicles, and unpredictable pedestrian behavior.",
+            "technologies": ["Deep Learning", "Reinforcement Learning", "Computer Vision", "Sensor Fusion", "Path Planning"],
+            "benefits": [
+                "Potential to reduce accidents caused by human error",
+                "Can operate 24/7 without fatigue",
+                "Optimizes routes and fuel efficiency",
+                "Provides mobility for those unable to drive",
+                "Can improve traffic flow through coordination"
+            ]
+        },
+        "xai-1": {
+            "title": "Loan Approval Transparency",
+            "category": "Explainable AI",
+            "icon": "fas fa-credit-card",
+            "description": "Banks using XAI to explain why loan applications are approved or rejected, showing which factors (income, credit score, debt ratio) influenced the decision.",
+            "details": "Financial institutions are required to explain credit decisions. Explainable AI helps banks provide transparent explanations of why loans were approved or denied, showing which factors most influenced the decision.",
+            "howItWorks": [
+                "AI models analyze loan applications using features like income, credit score, debt-to-income ratio",
+                "SHAP (SHapley Additive exPlanations) values quantify each feature's contribution",
+                "LIME (Local Interpretable Model-agnostic Explanations) provides local explanations",
+                "Feature importance scores show which factors most influenced the decision",
+                "Explanations are presented in human-readable format to applicants"
+            ],
+            "realWorldExample": "Banks like JPMorgan Chase and Bank of America use explainable AI for loan decisions. When a loan is denied, applicants receive explanations like 'Your application was declined primarily due to: high debt-to-income ratio (45%), recent credit inquiries (3 in past 6 months), and limited credit history.' This transparency helps applicants understand and improve their financial profile.",
+            "technologies": ["SHAP Values", "Feature Importance", "LIME", "Decision Trees", "Rule-based Explanations"],
+            "benefits": [
+                "Regulatory compliance (fair lending laws)",
+                "Builds trust with customers",
+                "Helps applicants understand how to improve",
+                "Enables identification of model bias",
+                "Provides audit trail for decisions"
+            ]
+        },
+        "xai-2": {
+            "title": "Legal Case Prediction & Reasoning",
+            "category": "Explainable AI",
+            "icon": "fas fa-gavel",
+            "description": "AI systems that predict case outcomes while providing interpretable explanations of legal precedents and reasoning paths used in the decision.",
+            "details": "Legal AI systems can predict case outcomes, but lawyers need to understand the reasoning. Explainable AI provides interpretable explanations showing which legal precedents, statutes, and facts influenced the prediction.",
+            "howItWorks": [
+                "AI systems analyze case facts, legal precedents, and statutes",
+                "The system identifies similar past cases and their outcomes",
+                "Explainable models highlight which legal factors were most influential",
+                "Reasoning paths show how the system connected facts to legal principles",
+                "Explanations cite specific cases, statutes, and legal reasoning"
+            ],
+            "realWorldExample": "ROSS Intelligence and LexisNexis use explainable AI for legal research. When predicting case outcomes, these systems show: 'This case is similar to Smith v. Jones (2020) because both involve [specific legal principle]. The court ruled in favor of the plaintiff in 75% of similar cases. Key factors: statute of limitations (favorable), precedent strength (moderate), factual similarity (high).'",
+            "technologies": ["Interpretable Models", "Decision Trees", "Legal Knowledge Graphs", "Case-based Reasoning", "Natural Language Explanations"],
+            "benefits": [
+                "Helps lawyers understand AI reasoning",
+                "Builds trust in AI recommendations",
+                "Enables verification of legal logic",
+                "Helps identify relevant precedents",
+                "Supports legal argumentation"
+            ]
+        },
+        "xai-3": {
+            "title": "Medical Diagnosis Explanation",
+            "category": "Explainable AI",
+            "icon": "fas fa-heartbeat",
+            "description": "Healthcare AI that not only diagnoses conditions but also highlights which symptoms, test results, and patient history factors led to the diagnosis.",
+            "details": "Medical AI systems must explain their diagnoses to gain trust from doctors and patients. Explainable AI highlights which symptoms, lab results, and patient history factors contributed to the diagnosis.",
+            "howItWorks": [
+                "AI systems analyze patient symptoms, lab results, medical history, and imaging",
+                "Attention mechanisms identify which parts of medical images are most relevant",
+                "Feature attribution methods show which symptoms/test results influenced the diagnosis",
+                "The system provides explanations like 'Diagnosis: Pneumonia. Key indicators: chest X-ray shows opacity in right lower lobe (confidence: 92%), elevated white blood cell count (15,000), fever (101.5°F), and productive cough.'",
+                "Doctors can verify the reasoning and make informed decisions"
+            ],
+            "realWorldExample": "IBM Watson for Oncology explains its cancer treatment recommendations by showing which clinical guidelines, research papers, and patient factors influenced each suggestion. Google's medical AI for diabetic retinopathy highlights which parts of retinal images indicate the condition. These explanations help doctors understand and trust AI recommendations.",
+            "technologies": ["LIME", "Attention Mechanisms", "Gradient-based Explanations", "Medical Knowledge Graphs", "Clinical Decision Support"],
+            "benefits": [
+                "Builds trust with healthcare providers",
+                "Helps doctors verify AI reasoning",
+                "Enables patients to understand diagnoses",
+                "Supports medical education",
+                "Helps identify when AI might be wrong"
+            ]
+        },
+        "prompt-1": {
+            "title": "Code Generation & Debugging",
+            "category": "Prompt Engineering",
+            "icon": "fas fa-code",
+            "description": "Engineers using structured prompts to generate production-ready code, refactor legacy systems, and debug complex issues with context-aware AI assistants.",
+            "details": "Effective prompt engineering enables AI to generate, refactor, and debug code. Well-crafted prompts provide context, examples, and clear instructions that guide the AI to produce high-quality code.",
+            "howItWorks": [
+                "Engineers craft prompts with clear context: programming language, framework, requirements",
+                "Few-shot learning: prompts include examples of desired code patterns",
+                "Chain-of-thought prompting breaks complex tasks into steps",
+                "Iterative refinement: engineers refine prompts based on AI outputs",
+                "Context engineering: prompts include relevant code snippets, documentation, and constraints"
+            ],
+            "realWorldExample": "GitHub Copilot uses prompt engineering to generate code. A well-engineered prompt might be: 'Write a Python function to calculate Fibonacci numbers using memoization. Include type hints and docstring. Example: fibonacci(10) should return 55.' The AI generates production-ready code. Similarly, ChatGPT and Claude are used for debugging by providing error messages and code context in prompts.",
+            "technologies": ["Chain-of-Thought", "Few-Shot Learning", "Context Engineering", "Code Generation", "Iterative Refinement"],
+            "benefits": [
+                "Faster code development",
+                "Consistent code quality",
+                "Learning from examples",
+                "Handles repetitive coding tasks",
+                "Assists with debugging complex issues"
+            ]
+        },
+        "prompt-2": {
+            "title": "Content Creation & Marketing",
+            "category": "Prompt Engineering",
+            "icon": "fas fa-file-alt",
+            "description": "Marketing teams crafting prompts to generate blog posts, social media content, and ad copy tailored to specific audiences, tones, and brand guidelines.",
+            "details": "Marketing professionals use carefully engineered prompts to generate content that matches brand voice, target audience, and campaign goals. Effective prompts include style, tone, audience, and format specifications.",
+            "howItWorks": [
+                "Marketers define content requirements: topic, audience, tone, length, format",
+                "Role-based prompting: 'You are a marketing expert writing for [target audience]'",
+                "Style transfer: prompts include examples of desired writing style",
+                "Iterative refinement: content is refined through multiple prompt iterations",
+                "A/B testing: different prompts generate variations for testing"
+            ],
+            "realWorldExample": "Companies like Jasper.ai and Copy.ai help marketers generate content. A well-engineered prompt: 'Write a LinkedIn post about sustainable technology for C-level executives. Tone: professional but approachable. Length: 200 words. Include a call-to-action. Style: data-driven with real examples.' This generates targeted content that matches brand guidelines and audience preferences.",
+            "technologies": ["Role-Based Prompting", "Style Transfer", "Content Generation", "A/B Testing", "Brand Voice Modeling"],
+            "benefits": [
+                "Faster content creation",
+                "Consistent brand voice",
+                "Scalable content production",
+                "Multiple content variations",
+                "Tailored to specific audiences"
+            ]
+        },
+        "prompt-3": {
+            "title": "Personalized Learning Tutors",
+            "category": "Prompt Engineering",
+            "icon": "fas fa-graduation-cap",
+            "description": "Educational platforms using carefully engineered prompts to create adaptive learning experiences, explanations, and practice problems based on student level.",
+            "details": "Educational AI tutors use prompt engineering to adapt explanations, generate practice problems, and provide personalized feedback. Prompts are engineered to match student knowledge level and learning style.",
+            "howItWorks": [
+                "System assesses student's current knowledge level and learning style",
+                "Prompts are engineered with appropriate complexity: 'Explain quantum physics to a 10th-grade student using analogies'",
+                "Context engineering: prompts include student's previous answers and misconceptions",
+                "Adaptive prompting: difficulty adjusts based on student performance",
+                "Iterative refinement: explanations are refined until student understands"
+            ],
+            "realWorldExample": "Khan Academy's AI tutor and Duolingo use prompt engineering. When a student struggles with algebra, the system might prompt: 'Explain solving linear equations to a student who understands basic arithmetic but is confused about variables. Use a real-world example about buying items. Show step-by-step with explanations.' This generates personalized explanations that adapt to each student's needs.",
+            "technologies": ["Context Engineering", "Iterative Refinement", "Adaptive Learning", "Personalization", "Educational AI"],
+            "benefits": [
+                "Personalized learning experiences",
+                "Adapts to individual learning pace",
+                "Provides explanations at appropriate level",
+                "Generates practice problems dynamically",
+                "Supports diverse learning styles"
+            ]
+        },
+        "rag-1": {
+            "title": "Enterprise Customer Support",
+            "category": "RAG & Knowledge Workflows",
+            "icon": "fas fa-headset",
+            "description": "RAG systems that retrieve relevant product documentation, FAQs, and support tickets to provide accurate, context-aware answers to customer inquiries in real-time.",
+            "details": "RAG (Retrieval-Augmented Generation) systems combine information retrieval with language generation. They search through company knowledge bases and generate accurate, context-aware responses to customer questions.",
+            "howItWorks": [
+                "Customer questions are converted to vector embeddings using language models",
+                "System searches vector database of product docs, FAQs, and support tickets",
+                "Most relevant documents are retrieved (typically top 3-5)",
+                "Retrieved context is combined with the question in a prompt",
+                "Language model generates answer using retrieved context, ensuring accuracy"
+            ],
+            "realWorldExample": "Companies like Intercom, Zendesk, and Salesforce use RAG for customer support. When a customer asks 'How do I reset my password?', the system retrieves the relevant documentation section, combines it with the question, and generates: 'To reset your password: 1) Click 'Forgot Password' on the login page, 2) Enter your email, 3) Check your inbox for reset link...' This provides accurate, up-to-date answers from company knowledge bases.",
+            "technologies": ["Vector Databases", "Semantic Search", "Embeddings", "Document Retrieval", "Language Models"],
+            "benefits": [
+                "Accurate answers from company knowledge",
+                "Always up-to-date with latest documentation",
+                "Reduces support agent workload",
+                "24/7 customer support availability",
+                "Consistent responses across channels"
+            ]
+        },
+        "rag-2": {
+            "title": "Legal Research Assistant",
+            "category": "RAG & Knowledge Workflows",
+            "icon": "fas fa-briefcase",
+            "description": "AI systems that search through case law, statutes, and legal precedents to help lawyers find relevant information and generate legal briefs with citations.",
+            "details": "Legal RAG systems retrieve relevant cases, statutes, and legal precedents from vast legal databases, then generate summaries, briefs, and arguments with proper citations.",
+            "howItWorks": [
+                "Lawyers input legal questions or case facts",
+                "System searches vector database of case law, statutes, and legal documents",
+                "Relevant cases and statutes are retrieved based on semantic similarity",
+                "Retrieved legal documents are analyzed and synthesized",
+                "System generates legal briefs, case summaries, or arguments with proper citations"
+            ],
+            "realWorldExample": "Legal research platforms like Casetext's CARA and LexisNexis use RAG. When researching 'employment discrimination based on age', the system retrieves relevant cases like 'Age Discrimination in Employment Act cases from 2020-2024', synthesizes them, and generates: 'Recent cases show courts favor plaintiffs when... [cites Smith v. Company (2022), Jones v. Corp (2023)]...' This saves lawyers hours of research time.",
+            "technologies": ["Document Retrieval", "Citation Generation", "Legal Knowledge Bases", "Semantic Search", "Legal Document Analysis"],
+            "benefits": [
+                "Faster legal research",
+                "Comprehensive case discovery",
+                "Accurate citations",
+                "Synthesizes information from multiple sources",
+                "Helps identify relevant precedents"
+            ]
+        },
+        "rag-3": {
+            "title": "Scientific Literature Analysis",
+            "category": "RAG & Knowledge Workflows",
+            "icon": "fas fa-flask",
+            "description": "Researchers using RAG to query vast scientific databases, retrieve relevant papers, synthesize findings, and generate literature reviews with proper citations.",
+            "details": "Scientific RAG systems help researchers navigate millions of research papers, retrieve relevant studies, synthesize findings, and generate literature reviews with accurate citations.",
+            "howItWorks": [
+                "Researchers input research questions or topics",
+                "System searches vector databases of scientific papers (PubMed, arXiv, etc.)",
+                "Relevant papers are retrieved based on semantic similarity and relevance",
+                "System extracts key findings, methodologies, and conclusions",
+                "RAG generates literature reviews, research summaries, or answers with citations"
+            ],
+            "realWorldExample": "Research tools like Elicit, Consensus, and Semantic Scholar use RAG. When researching 'effectiveness of mRNA vaccines', the system retrieves relevant papers, synthesizes findings: 'Multiple studies (Smith et al., 2021; Jones et al., 2022) show mRNA vaccines are 90%+ effective...' and generates comprehensive literature reviews with proper citations. This helps researchers stay current with rapidly evolving fields.",
+            "technologies": ["Knowledge Graphs", "Multi-Document Synthesis", "Scientific Databases", "Citation Networks", "Research Paper Analysis"],
+            "benefits": [
+                "Faster literature reviews",
+                "Comprehensive paper discovery",
+                "Synthesizes findings across papers",
+                "Accurate citations",
+                "Stays current with latest research"
+            ]
+        }
+    }
+    </script>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
