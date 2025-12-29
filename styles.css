@@ -118,6 +118,26 @@ body {
     animation: fadeIn 1s ease-in;
 }
 
+.header-logo {
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.8s ease-in;
+}
+
+.logo-img {
+    max-width: 200px;
+    height: auto;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+    transition: all 0.3s ease;
+}
+
+.logo-img:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.4));
+}
+
 .service-item {
     background: var(--bg-white);
     border-radius: 20px;
@@ -322,6 +342,10 @@ body {
 @media (max-width: 768px) {
     body {
         padding: 20px 10px;
+    }
+
+    .logo-img {
+        max-width: 150px;
     }
 
     .display-5 {
