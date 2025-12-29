@@ -100,6 +100,19 @@
                         </div>
                     </a>
                 </div>
+                <div class="col-lg-4 col-md-6 fadeInUp" data-delay="0.1s">
+                    <a href="https://prateekdutta2001.github.io/machine-learning/" target="_blank"
+                        class="service-item d-block rounded text-center h-100 p-4" data-topic="machine-learning">
+                        <div class="bg-icon mx-auto mb-4">
+                            <i class="fas fa-brain fa-2x text-primary"></i>
+                        </div>
+                        <h4 class="mb-3">Machine Learning</h4>
+                        <p class="description">Master ML from basics to advanced concepts</p>
+                        <div class="hover-overlay">
+                            <span class="hover-text">Start Learning →</span>
+                        </div>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
@@ -402,6 +415,55 @@
                             <div class="example-tags">
                                 <span class="tag">Knowledge Graphs</span>
                                 <span class="tag">Multi-Document Synthesis</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Machine Learning Examples -->
+            <div class="example-category mb-5 fadeInUp" data-delay="0.7s">
+                <div class="category-header">
+                    <i class="fas fa-brain"></i>
+                    <h2>Machine Learning</h2>
+                </div>
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="example-card" data-modal="ml-1">
+                            <div class="example-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <h4>Email Spam Detection</h4>
+                            <p>ML models that automatically classify emails as spam or legitimate by analyzing content patterns, sender reputation, and user behavior to protect inboxes from unwanted messages.</p>
+                            <div class="example-tags">
+                                <span class="tag">Classification</span>
+                                <span class="tag">Naive Bayes</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="example-card" data-modal="ml-2">
+                            <div class="example-icon">
+                                <i class="fas fa-home"></i>
+                            </div>
+                            <h4>House Price Prediction</h4>
+                            <p>Regression models that predict real estate prices based on features like location, size, number of bedrooms, age, and neighborhood amenities to help buyers and sellers make informed decisions.</p>
+                            <div class="example-tags">
+                                <span class="tag">Regression</span>
+                                <span class="tag">Linear Models</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="example-card" data-modal="ml-3">
+                            <div class="example-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h4>Customer Segmentation</h4>
+                            <p>Unsupervised learning algorithms that group customers based on purchasing behavior, demographics, and preferences to enable targeted marketing campaigns and personalized experiences.</p>
+                            <div class="example-tags">
+                                <span class="tag">Clustering</span>
+                                <span class="tag">K-Means</span>
                             </div>
                         </div>
                     </div>
@@ -854,6 +916,75 @@
                 "Accurate citations",
                 "Stays current with latest research"
             ]
+        },
+        "ml-1": {
+            "title": "Email Spam Detection",
+            "category": "Machine Learning",
+            "icon": "fas fa-envelope",
+            "description": "ML models that automatically classify emails as spam or legitimate by analyzing content patterns, sender reputation, and user behavior to protect inboxes from unwanted messages.",
+            "details": "Spam detection is one of the most common applications of machine learning. It uses classification algorithms to analyze email content, headers, and metadata to distinguish between legitimate emails and spam.",
+            "howItWorks": [
+                "Email content is preprocessed: text is tokenized, stop words removed, and features extracted",
+                "Features include: word frequencies, sender reputation, email headers, URL patterns, and user interaction history",
+                "Classification models (Naive Bayes, SVM, or Neural Networks) are trained on labeled spam/legitimate emails",
+                "The model assigns a probability score indicating likelihood of spam",
+                "Emails above a threshold are filtered to spam folder or blocked"
+            ],
+            "realWorldExample": "Gmail's spam filter uses machine learning to block over 99.9% of spam emails. It analyzes billions of emails daily, learning from user actions (marking as spam/not spam) to continuously improve. Microsoft Outlook and Yahoo Mail use similar ML-based spam detection systems. These systems adapt to new spam patterns, including phishing attempts and malicious links.",
+            "technologies": ["Classification", "Naive Bayes", "Support Vector Machines", "Natural Language Processing", "Feature Engineering"],
+            "benefits": [
+                "Automatically filters unwanted emails",
+                "Protects users from phishing and malware",
+                "Learns and adapts to new spam patterns",
+                "Reduces inbox clutter",
+                "Improves email security"
+            ]
+        },
+        "ml-2": {
+            "title": "House Price Prediction",
+            "category": "Machine Learning",
+            "icon": "fas fa-home",
+            "description": "Regression models that predict real estate prices based on features like location, size, number of bedrooms, age, and neighborhood amenities to help buyers and sellers make informed decisions.",
+            "details": "Real estate price prediction uses regression algorithms to estimate property values based on various features. This helps buyers, sellers, and real estate professionals make data-driven decisions.",
+            "howItWorks": [
+                "Historical property data is collected: price, location, size, bedrooms, bathrooms, age, amenities",
+                "Features are engineered: distance to schools, crime rates, neighborhood ratings, market trends",
+                "Regression models (Linear Regression, Random Forest, or Gradient Boosting) learn price patterns",
+                "The model learns relationships like: larger homes cost more, proximity to city center increases value",
+                "New property features are input to predict market price with confidence intervals"
+            ],
+            "realWorldExample": "Zillow's Zestimate uses machine learning to estimate home values for over 100 million properties. It analyzes hundreds of features including recent sales, home characteristics, and local market trends. Redfin and Realtor.com use similar ML models. These predictions help homeowners understand property values, assist buyers in making offers, and help sellers price their homes competitively.",
+            "technologies": ["Regression", "Linear Models", "Random Forest", "Feature Engineering", "Market Analysis"],
+            "benefits": [
+                "Data-driven price estimates",
+                "Helps buyers make informed decisions",
+                "Assists sellers in pricing strategy",
+                "Considers multiple market factors",
+                "Updates with market trends"
+            ]
+        },
+        "ml-3": {
+            "title": "Customer Segmentation",
+            "category": "Machine Learning",
+            "icon": "fas fa-users",
+            "description": "Unsupervised learning algorithms that group customers based on purchasing behavior, demographics, and preferences to enable targeted marketing campaigns and personalized experiences.",
+            "details": "Customer segmentation uses clustering algorithms to identify distinct customer groups with similar characteristics. This enables businesses to tailor marketing, products, and services to specific segments.",
+            "howItWorks": [
+                "Customer data is collected: purchase history, demographics, browsing behavior, preferences",
+                "Features are normalized and prepared: spending amount, frequency, product categories, location",
+                "Clustering algorithms (K-Means, DBSCAN, or Hierarchical) group similar customers",
+                "Each cluster represents a customer segment with distinct characteristics",
+                "Businesses create targeted strategies for each segment: marketing campaigns, product recommendations, pricing"
+            ],
+            "realWorldExample": "Amazon uses customer segmentation to personalize shopping experiences. Customers are grouped by purchase patterns (frequent buyers, bargain hunters, luxury shoppers), enabling targeted recommendations and marketing. Netflix segments viewers by viewing preferences to recommend content. Retailers like Target use segmentation to send personalized coupons and promotions. These ML-driven segments improve customer satisfaction and increase sales.",
+            "technologies": ["Clustering", "K-Means", "Unsupervised Learning", "Customer Analytics", "Market Segmentation"],
+            "benefits": [
+                "Personalized customer experiences",
+                "Targeted marketing campaigns",
+                "Improved product recommendations",
+                "Better understanding of customer needs",
+                "Increased customer retention and sales"
+            ]
         }
     }
     </script>
@@ -861,5 +992,4 @@
     <script src="script.js"></script>
 </body>
 </html>
-
 
