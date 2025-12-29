@@ -1,2 +1,2 @@
 # Intelligence.Agent
-Personalized Tutorial to master the concept of computational intelligence, fields like AI, Machine Learning, and Data Science Concepts
+A tailored learning experience focused on developing strong foundations and advanced understanding of Computational Intelligence, with in-depth coverage of Artificial Intelligence, Machine Learning, and Data Science concepts.
