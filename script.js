@@ -1,218 +1,300 @@
-// Wait for DOM to be fully loaded
-document.addEventListener('DOMContentLoaded', function() {
-    // Add smooth scroll behavior
-    document.documentElement.style.scrollBehavior = 'smooth';
+// ============================================
+// INTELLIGENCE.AGENT - Main JavaScript
+// ============================================
 
-    // Get all service items
-    const serviceItems = document.querySelectorAll('.service-item');
+(function() {
+    'use strict';
 
-    // Add click tracking and animation
-    serviceItems.forEach(item => {
-        // Add ripple effect on click
-        item.addEventListener('click', function(e) {
-            // Create ripple element
-            const ripple = document.createElement('span');
-            const rect = this.getBoundingClientRect();
-            const size = Math.max(rect.width, rect.height);
-            const x = e.clientX - rect.left - size / 2;
-            const y = e.clientY - rect.top - size / 2;
+    // ============================================
+    // INITIALIZATION
+    // ============================================
 
-            ripple.style.width = ripple.style.height = size + 'px';
-            ripple.style.left = x + 'px';
-            ripple.style.top = y + 'px';
-            ripple.classList.add('ripple');
-
-            this.appendChild(ripple);
-
-            // Remove ripple after animation
-            setTimeout(() => {
-                ripple.remove();
-            }, 600);
-
-            // Add loading state
-            this.classList.add('loading');
-        });
-
-        // Add mouse enter/leave effects
-        item.addEventListener('mouseenter', function() {
-            this.style.transition = 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
-            
-            // Animate icon
-            const icon = this.querySelector('.bg-icon i');
-            if (icon) {
-                icon.style.transform = 'scale(1.2) rotate(10deg)';
-            }
-        });
-
-        item.addEventListener('mouseleave', function() {
-            const icon = this.querySelector('.bg-icon i');
-            if (icon) {
-                icon.style.transform = 'scale(1) rotate(0deg)';
-            }
-        });
-
-        // Add keyboard navigation support
-        item.addEventListener('keydown', function(e) {
-            if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                this.click();
-            }
-        });
-    });
-
-    // Intersection Observer for fade-in animations
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }
-        });
-    }, observerOptions);
-
-    // Observe all fadeInUp elements
-    const fadeElements = document.querySelectorAll('.fadeInUp');
-    fadeElements.forEach(el => {
-        observer.observe(el);
-    });
-
-    // Add parallax effect to background (subtle)
-    let lastScrollTop = 0;
-    window.addEventListener('scroll', function() {
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        const container = document.querySelector('.container-xxl');
+    document.addEventListener('DOMContentLoaded', function() {
+        initNavigation();
+        initThemeToggle();
+        initNeuralNetwork();
+        initSmoothScrolling();
+        initModuleAccordions();
+        initCaseStudies();
+        initScrollAnimations();
+        initNewsletterForm();
+        initScrollToTop();
         
-        if (container) {
-            const parallaxValue = (scrollTop - lastScrollTop) * 0.1;
-            container.style.transform = `translateY(${parallaxValue}px)`;
-        }
-        
-        lastScrollTop = scrollTop;
-    }, { passive: true });
-
-    // Add cursor trail effect (optional, can be disabled)
-    let cursorTrail = [];
-    const maxTrailLength = 5;
-
-    document.addEventListener('mousemove', function(e) {
-        // Only add trail on service items
-        const serviceItem = e.target.closest('.service-item');
-        if (serviceItem) {
-            const trail = document.createElement('div');
-            trail.className = 'cursor-trail';
-            trail.style.left = e.clientX + 'px';
-            trail.style.top = e.clientY + 'px';
-            document.body.appendChild(trail);
-
-            cursorTrail.push(trail);
-
-            if (cursorTrail.length > maxTrailLength) {
-                const oldTrail = cursorTrail.shift();
-                oldTrail.remove();
-            }
-
-            setTimeout(() => {
-                trail.style.opacity = '0';
-                trail.style.transform = 'scale(0)';
-                setTimeout(() => trail.remove(), 300);
-            }, 500);
-        }
+        console.log('%c🤖 Intelligence.Agent', 'color: #3b82f6; font-size: 24px; font-weight: bold;');
+        console.log('%cBuild, Learn & Deploy Real-World AI Agents', 'color: #06b6d4; font-size: 14px;');
     });
 
-    // Add interactions for example cards
-    const exampleCards = document.querySelectorAll('.example-card');
-    
-    exampleCards.forEach(card => {
-        // Add hover effect with icon animation
-        card.addEventListener('mouseenter', function() {
-            const icon = this.querySelector('.example-icon');
-            if (icon) {
-                icon.style.transform = 'rotate(5deg) scale(1.15)';
+    // ============================================
+    // NAVIGATION
+    // ============================================
+
+    function initNavigation() {
+        const navbar = document.getElementById('navbar');
+        const navToggle = document.getElementById('navToggle');
+        const navMenu = document.getElementById('navMenu');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        // Scroll effect on navbar
+        let lastScroll = 0;
+        window.addEventListener('scroll', function() {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
             }
             
-            // Animate tags
-            const tags = this.querySelectorAll('.tag');
-            tags.forEach((tag, index) => {
-                setTimeout(() => {
-                    tag.style.transform = 'translateY(-3px)';
-                }, index * 50);
+            lastScroll = currentScroll;
+        }, { passive: true });
+
+        // Mobile menu toggle
+        if (navToggle) {
+            navToggle.addEventListener('click', function() {
+                const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+                navToggle.setAttribute('aria-expanded', !isExpanded);
+                navMenu.classList.toggle('active');
             });
-        });
+        }
 
-        card.addEventListener('mouseleave', function() {
-            const icon = this.querySelector('.example-icon');
-            if (icon) {
-                icon.style.transform = 'rotate(0deg) scale(1)';
-            }
-            
-            const tags = this.querySelectorAll('.tag');
-            tags.forEach(tag => {
-                tag.style.transform = 'translateY(0)';
-            });
-        });
-
-        // Add click handler to open modal
-        card.addEventListener('click', function(e) {
-            e.preventDefault();
-            const modalId = this.getAttribute('data-modal');
-            if (modalId) {
-                openModal(modalId);
-            }
-        });
-    });
-
-    // Add staggered animation for example categories
-    const exampleCategories = document.querySelectorAll('.example-category');
-    const categoryObserver = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
+        // Active link highlighting
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                navLinks.forEach(l => l.classList.remove('active'));
+                this.classList.add('active');
                 
-                // Animate cards within category
-                const cards = entry.target.querySelectorAll('.example-card');
-                cards.forEach((card, index) => {
-                    setTimeout(() => {
-                        card.style.opacity = '1';
-                        card.style.transform = 'translateY(0)';
-                    }, index * 100);
-                });
+                if (window.innerWidth <= 768) {
+                    navMenu.classList.remove('active');
+                    navToggle.setAttribute('aria-expanded', 'false');
+                }
+            });
+        });
+
+        // Highlight active section on scroll
+        window.addEventListener('scroll', updateActiveNavLink, { passive: true });
+    }
+
+    function updateActiveNavLink() {
+        const sections = document.querySelectorAll('.section, .hero');
+        const navLinks = document.querySelectorAll('.nav-link');
+        
+        let current = '';
+        
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 100;
+            const sectionHeight = section.clientHeight;
+            
+            if (window.pageYOffset >= sectionTop && window.pageYOffset < sectionTop + sectionHeight) {
+                current = section.getAttribute('id');
             }
         });
-    }, {
-        threshold: 0.1,
-        rootMargin: '0px 0px -100px 0px'
-    });
 
-    exampleCategories.forEach(category => {
-        category.style.opacity = '0';
-        category.style.transform = 'translateY(30px)';
-        category.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        
-        const cards = category.querySelectorAll('.example-card');
-        cards.forEach(card => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(20px)';
-            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${current}`) {
+                link.classList.add('active');
+            }
         });
-        
-        categoryObserver.observe(category);
-    });
+    }
 
-    // Modal functionality
-    const modal = document.getElementById('exampleModal');
-    const modalBody = document.getElementById('modalBody');
-    const modalClose = document.querySelector('.modal-close');
-    const modalOverlay = document.querySelector('.modal-overlay');
+    // ============================================
+    // THEME TOGGLE
+    // ============================================
+
+    function initThemeToggle() {
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        const html = document.documentElement;
+        
+        // Load saved theme
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        html.setAttribute('data-theme', savedTheme);
+        updateThemeIcon(savedTheme);
+
+        if (themeToggle) {
+            themeToggle.addEventListener('click', function() {
+                const currentTheme = html.getAttribute('data-theme');
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                
+                html.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+                updateThemeIcon(newTheme);
+            });
+        }
+
+        function updateThemeIcon(theme) {
+            if (themeIcon) {
+                themeIcon.className = theme === 'dark' ? 'fas fa-moon' : 'fas fa-sun';
+            }
+        }
+    }
+
+    // ============================================
+    // NEURAL NETWORK CANVAS ANIMATION
+    // ============================================
+
+    function initNeuralNetwork() {
+        const canvas = document.getElementById('neuralNetwork');
+        if (!canvas) return;
+
+        const ctx = canvas.getContext('2d');
+        let animationFrame;
+        
+        // Set canvas size
+        function resizeCanvas() {
+            canvas.width = canvas.offsetWidth;
+            canvas.height = canvas.offsetHeight;
+        }
+        
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+
+        // Node class
+        class Node {
+            constructor(x, y) {
+                this.x = x;
+                this.y = y;
+                this.vx = (Math.random() - 0.5) * 0.5;
+                this.vy = (Math.random() - 0.5) * 0.5;
+                this.radius = Math.random() * 2 + 1;
+            }
+
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+
+                if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+                if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+            }
+
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                ctx.fillStyle = 'rgba(59, 130, 246, 0.6)';
+                ctx.fill();
+            }
+        }
+
+        // Create nodes
+        const nodeCount = 50;
+        const nodes = [];
+        
+        for (let i = 0; i < nodeCount; i++) {
+            nodes.push(new Node(
+                Math.random() * canvas.width,
+                Math.random() * canvas.height
+            ));
+        }
+
+        // Animation loop
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // Update and draw nodes
+            nodes.forEach(node => {
+                node.update();
+                node.draw();
+            });
+
+            // Draw connections
+            nodes.forEach((nodeA, i) => {
+                nodes.slice(i + 1).forEach(nodeB => {
+                    const dx = nodeB.x - nodeA.x;
+                    const dy = nodeB.y - nodeA.y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+
+                    if (distance < 150) {
+                        ctx.beginPath();
+                        ctx.moveTo(nodeA.x, nodeA.y);
+                        ctx.lineTo(nodeB.x, nodeB.y);
+                        ctx.strokeStyle = `rgba(59, 130, 246, ${0.3 * (1 - distance / 150)})`;
+                        ctx.lineWidth = 1;
+                        ctx.stroke();
+                    }
+                });
+            });
+
+            animationFrame = requestAnimationFrame(animate);
+        }
+
+        // Start animation
+        animate();
+
+        // Pause when tab is not visible
+        document.addEventListener('visibilitychange', function() {
+            if (document.hidden) {
+                cancelAnimationFrame(animationFrame);
+            } else {
+                animate();
+            }
+        });
+    }
+
+    // ============================================
+    // SMOOTH SCROLLING
+    // ============================================
+
+    function initSmoothScrolling() {
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href === '#' || !href) return;
+
+                const target = document.querySelector(href);
+                if (target) {
+                    e.preventDefault();
+                    const offsetTop = target.offsetTop - 80;
+                    
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    }
+
+    // ============================================
+    // MODULE ACCORDIONS
+    // ============================================
+
+    function initModuleAccordions() {
+        const expandButtons = document.querySelectorAll('.module-expand');
+        
+        expandButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const isExpanded = this.getAttribute('aria-expanded') === 'true';
+                const newExpanded = !isExpanded;
+                
+                this.setAttribute('aria-expanded', newExpanded);
+                
+                // Close other accordions if needed (optional)
+                // expandButtons.forEach(btn => {
+                //     if (btn !== this) {
+                //         btn.setAttribute('aria-expanded', 'false');
+                //     }
+                // });
+            });
+        });
+    }
+
+    // ============================================
+    // CASE STUDIES
+    // ============================================
+
+    function initCaseStudies() {
+        const caseStudiesGrid = document.getElementById('caseStudiesGrid');
+        const modal = document.getElementById('caseStudyModal');
+        const modalBody = document.getElementById('caseStudyModalBody');
+        const modalClose = document.querySelector('#caseStudyModal .modal-close');
+        const modalOverlay = document.querySelector('#caseStudyModal .modal-overlay');
+        
+        if (!caseStudiesGrid) return;
+
+        // Load modal data
+        const modalDataScript = document.getElementById('modalData');
     let modalData = {};
 
-    // Load modal data from JSON script tag
-    const modalDataScript = document.getElementById('modalData');
     if (modalDataScript) {
         try {
             modalData = JSON.parse(modalDataScript.textContent);
@@ -221,15 +303,99 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Function to open modal
-    function openModal(modalId) {
-        const data = modalData[modalId];
-        if (!data) {
-            console.error('Modal data not found for:', modalId);
-            return;
+        // Case studies from all categories
+        const caseStudies = [
+            // Agentic AI
+            { id: 'agentic-ai-1', category: 'Agentic AI', title: 'E-Commerce Personal Shopping Assistant', description: 'An AI agent that autonomously browses products, compares prices, and makes purchase recommendations.', icon: 'fas fa-shopping-cart' },
+            { id: 'agentic-ai-2', category: 'Agentic AI', title: 'Autonomous Delivery Drones', description: 'Self-navigating drones that plan routes, avoid obstacles, and coordinate with other drones.', icon: 'fas fa-route' },
+            { id: 'agentic-ai-3', category: 'Agentic AI', title: 'Healthcare Diagnostic Agent', description: 'An AI agent that analyzes patient symptoms and provides treatment recommendations.', icon: 'fas fa-user-md' },
+            // RAG & Knowledge Workflows
+            { id: 'rag-1', category: 'RAG & Knowledge Workflows', title: 'Enterprise Customer Support', description: 'RAG systems that retrieve relevant documentation and FAQs to provide accurate, context-aware answers.', icon: 'fas fa-headset' },
+            { id: 'rag-2', category: 'RAG & Knowledge Workflows', title: 'Legal Research Assistant', description: 'AI systems that search through case law and legal precedents to help lawyers find relevant information.', icon: 'fas fa-briefcase' },
+            { id: 'rag-3', category: 'RAG & Knowledge Workflows', title: 'Scientific Literature Analysis', description: 'Researchers using RAG to query scientific databases and generate literature reviews with citations.', icon: 'fas fa-flask' },
+            // Neural Networks
+            { id: 'nn-1', category: 'Neural Networks', title: 'Medical Image Diagnosis', description: 'CNN-based systems that analyze X-rays, MRIs, and CT scans to detect tumors and diseases.', icon: 'fas fa-image' },
+            { id: 'nn-2', category: 'Neural Networks', title: 'Real-Time Language Translation', description: 'Sequence-to-sequence neural networks that translate between languages in real-time.', icon: 'fas fa-language' },
+            { id: 'nn-3', category: 'Neural Networks', title: 'Autonomous Vehicle Navigation', description: 'Deep neural networks processing sensor data to recognize objects and make driving decisions.', icon: 'fas fa-car' },
+            // Explainable AI
+            { id: 'xai-1', category: 'Explainable AI', title: 'Loan Approval Transparency', description: 'Banks using XAI to explain why loan applications are approved or rejected.', icon: 'fas fa-credit-card' },
+            { id: 'xai-2', category: 'Explainable AI', title: 'Legal Case Prediction & Reasoning', description: 'AI systems that predict case outcomes while providing interpretable explanations.', icon: 'fas fa-gavel' },
+            { id: 'xai-3', category: 'Explainable AI', title: 'Medical Diagnosis Explanation', description: 'Healthcare AI that highlights which symptoms and test results led to the diagnosis.', icon: 'fas fa-heartbeat' },
+            // Prompt Engineering
+            { id: 'prompt-1', category: 'Prompt Engineering', title: 'Code Generation & Debugging', description: 'Engineers using structured prompts to generate production-ready code and debug complex issues.', icon: 'fas fa-code' },
+            { id: 'prompt-2', category: 'Prompt Engineering', title: 'Content Creation & Marketing', description: 'Marketing teams crafting prompts to generate blog posts and ad copy tailored to audiences.', icon: 'fas fa-file-alt' },
+            { id: 'prompt-3', category: 'Prompt Engineering', title: 'Personalized Learning Tutors', description: 'Educational platforms using engineered prompts to create adaptive learning experiences.', icon: 'fas fa-graduation-cap' },
+            // Machine Learning
+            { id: 'ml-1', category: 'Machine Learning', title: 'Email Spam Detection', description: 'ML models that automatically classify emails as spam or legitimate by analyzing content patterns.', icon: 'fas fa-envelope' },
+            { id: 'ml-2', category: 'Machine Learning', title: 'House Price Prediction', description: 'Regression models that predict real estate prices based on location, size, and features.', icon: 'fas fa-home' },
+            { id: 'ml-3', category: 'Machine Learning', title: 'Customer Segmentation', description: 'Unsupervised learning algorithms that group customers based on purchasing behavior.', icon: 'fas fa-users' }
+        ];
+
+        // Render case studies
+        caseStudies.forEach(study => {
+            const card = createCaseStudyCard(study);
+            caseStudiesGrid.appendChild(card);
+        });
+
+        function createCaseStudyCard(study) {
+            const card = document.createElement('div');
+            card.className = 'project-card';
+            card.setAttribute('data-modal', study.id);
+            
+            card.innerHTML = `
+                <div class="project-image">
+                    <div class="project-placeholder">
+                        <i class="${study.icon}"></i>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <span class="project-category">${study.category}</span>
+                    <h3 class="project-title">${study.title}</h3>
+                    <p class="project-description">${study.description}</p>
+                    <div class="project-actions">
+                        <button class="btn btn-demo">View Case Study</button>
+                    </div>
+                </div>
+            `;
+
+            card.addEventListener('click', function() {
+                openCaseStudyModal(study.id);
+            });
+
+            return card;
         }
 
-        // Populate modal content
+        function openCaseStudyModal(studyId) {
+            const data = modalData[studyId];
+            if (!data) {
+                // Fallback for case studies without full modal data
+                const study = caseStudies.find(s => s.id === studyId);
+                if (!study) {
+                    console.error('Case study not found:', studyId);
+                    return;
+                }
+                
+                // Show simplified modal
+                modalBody.innerHTML = `
+                    <div class="modal-header">
+                        <span class="modal-category">${study.category}</span>
+                        <h2 class="modal-title">
+                            <i class="${study.icon}"></i>
+                            ${study.title}
+                        </h2>
+                        <p class="modal-description">${study.description}</p>
+                    </div>
+                    <div class="modal-section">
+                        <p>Full case study details coming soon. Explore more case studies in the <a href="#case-studies" style="color: var(--accent-cyan);">Case Studies</a> section.</p>
+                    </div>
+                `;
+                
+                modal.classList.add('active');
+                modal.setAttribute('aria-hidden', 'false');
+                document.body.style.overflow = 'hidden';
+                return;
+            }
+
         modalBody.innerHTML = `
             <div class="modal-header">
                 <span class="modal-category">${data.category}</span>
@@ -274,78 +440,84 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
         `;
 
-        // Show modal
         modal.classList.add('active');
+            modal.setAttribute('aria-hidden', 'false');
         document.body.style.overflow = 'hidden';
     }
 
-    // Function to close modal
-    function closeModal() {
+        function closeCaseStudyModal() {
         modal.classList.remove('active');
+            modal.setAttribute('aria-hidden', 'true');
         document.body.style.overflow = '';
     }
 
-    // Event listeners for closing modal
     if (modalClose) {
-        modalClose.addEventListener('click', closeModal);
+            modalClose.addEventListener('click', closeCaseStudyModal);
     }
 
     if (modalOverlay) {
-        modalOverlay.addEventListener('click', closeModal);
+            modalOverlay.addEventListener('click', closeCaseStudyModal);
     }
 
-    // Close modal on Escape key
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape' && modal.classList.contains('active')) {
-            closeModal();
+                closeCaseStudyModal();
+            }
+        });
+    }
+
+    // ============================================
+    // SCROLL ANIMATIONS
+    // ============================================
+
+    function initScrollAnimations() {
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in-up');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Observe sections
+        document.querySelectorAll('.section, .path-card, .module-card, .project-card, .blog-card').forEach(el => {
+            el.style.opacity = '0';
+            observer.observe(el);
+        });
+    }
+
+    // ============================================
+    // NEWSLETTER FORM
+    // ============================================
+
+    function initNewsletterForm() {
+        const newsletterForm = document.querySelector('.newsletter-form');
+        
+        if (newsletterForm) {
+            newsletterForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const email = this.querySelector('input[type="email"]').value;
+                
+                // Mock submission
+                alert(`Thank you for subscribing! You'll receive updates at ${email}`);
+                this.reset();
+            });
         }
-    });
-
-    // Console welcome message
-    console.log('%c🎓 Welcome to Personalized Tutorial!', 'color: #4f46e5; font-size: 20px; font-weight: bold;');
-    console.log('%cExplore AI, ML, and Data Science concepts', 'color: #6b7280; font-size: 14px;');
-});
-
-// Add CSS for ripple effect dynamically
-const style = document.createElement('style');
-style.textContent = `
-    .service-item {
-        position: relative;
-        overflow: hidden;
     }
 
-    .ripple {
-        position: absolute;
-        border-radius: 50%;
-        background: rgba(255, 255, 255, 0.6);
-        transform: scale(0);
-        animation: ripple-animation 0.6s ease-out;
-        pointer-events: none;
+    // ============================================
+    // SCROLL TO TOP (Optional Enhancement)
+    // ============================================
+
+    function initScrollToTop() {
+        // Can add a scroll-to-top button if needed
+        // Implementation omitted for brevity
     }
 
-    @keyframes ripple-animation {
-        to {
-            transform: scale(4);
-            opacity: 0;
-        }
-    }
-
-    .cursor-trail {
-        position: fixed;
-        width: 10px;
-        height: 10px;
-        border-radius: 50%;
-        background: rgba(79, 70, 229, 0.5);
-        pointer-events: none;
-        z-index: 9999;
-        transform: translate(-50%, -50%);
-        transition: opacity 0.3s ease, transform 0.3s ease;
-    }
-
-    .service-item:focus {
-        outline: 3px solid var(--primary-color);
-        outline-offset: 3px;
-    }
-`;
-document.head.appendChild(style);
-
+})();
