@@ -471,9 +471,16 @@
     // ============================================
 
     function initScrollAnimations() {
+        // Avoid hiding entire .section blocks: on mobile, IntersectionObserver can miss
+        // or fire late (dynamic viewport, momentum scroll), leaving Case Studies / Insights invisible.
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (prefersReducedMotion) {
+            return;
+        }
+
         const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
+            threshold: 0,
+            rootMargin: '0px 0px 15% 0px'
         };
 
         const observer = new IntersectionObserver(function(entries) {
@@ -485,8 +492,7 @@
             });
         }, observerOptions);
 
-        // Observe sections
-        document.querySelectorAll('.section, .path-card, .module-card, .project-card, .blog-card').forEach(el => {
+        document.querySelectorAll('.path-card, .module-card, .project-card, .blog-card').forEach(el => {
             el.style.opacity = '0';
             observer.observe(el);
         });
