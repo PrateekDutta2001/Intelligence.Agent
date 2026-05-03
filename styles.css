@@ -642,7 +642,7 @@ body {
 
 .modules-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
     gap: var(--spacing-md);
 }
 
@@ -652,6 +652,7 @@ body {
     border: 1px solid var(--glass-border);
     border-radius: 20px;
     padding: var(--spacing-lg);
+    min-width: 0;
     transition: all var(--transition-base);
 }
 
@@ -763,7 +764,7 @@ body {
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
     gap: var(--spacing-md);
 }
 
@@ -773,6 +774,7 @@ body {
     border: 1px solid var(--glass-border);
     border-radius: 20px;
     overflow: hidden;
+    min-width: 0;
     transition: all var(--transition-base);
 }
 
@@ -884,7 +886,7 @@ body {
 
 .case-studies-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
     gap: var(--spacing-md);
 }
 
@@ -896,7 +898,7 @@ body {
 
 .blog-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
     gap: var(--spacing-md);
 }
 
@@ -906,6 +908,7 @@ body {
     border: 1px solid var(--glass-border);
     border-radius: 20px;
     overflow: hidden;
+    min-width: 0;
     transition: all var(--transition-base);
 }
 
@@ -1815,9 +1818,20 @@ body {
    ============================================ */
 
 @media (max-width: 1024px) {
-    
     .footer-main {
         grid-template-columns: 1fr 1fr;
+    }
+
+    .case-studies-grid,
+    .blog-grid {
+        grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr));
+    }
+}
+
+@media (max-width: 900px) {
+    .case-studies-grid,
+    .blog-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
 
@@ -1833,8 +1847,22 @@ body {
     .paths-grid,
     .modules-grid,
     .projects-grid,
+    .case-studies-grid,
     .blog-grid {
         grid-template-columns: 1fr;
+    }
+
+    .section-header {
+        margin-bottom: var(--spacing-lg);
+    }
+
+    .section-description {
+        font-size: 1rem;
+        padding: 0 var(--spacing-xs);
+    }
+
+    .container {
+        padding: 0 var(--spacing-sm);
     }
     
     .footer-main {
